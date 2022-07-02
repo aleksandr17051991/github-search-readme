@@ -100,7 +100,11 @@ const config = {
         test: /\.(png|jpg|gif|webp)$/,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
           }
         ]
       },

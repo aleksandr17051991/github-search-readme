@@ -6,6 +6,8 @@ import { Switch, Route, Redirect, StaticRouter } from 'react-router-dom'
 import store, { history } from '../redux'
 
 import HomePage from '../components/home-page'
+import Repos from '../components/repos'
+import Readme from '../components/readme-text'
 import NotFound from '../components/404'
 
 import Startup from './startup'
@@ -42,21 +44,21 @@ const RouterSelector = (props) =>
   typeof window !== 'undefined' ? <ConnectedRouter {...props} /> : <StaticRouter {...props} />
 
 const RootComponent = (props) => {
-  return (
-    <Provider store={store}>
-      <RouterSelector history={history} location={props.location} context={props.context}>
-        <Startup>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            
-            <PrivateRoute exact path="/hidden-route" component={HomePage} />
-            <OnlyAnonymousRoute exact path="/anonymous-route" component={HomePage} />
-
-            <Route component={NotFound} />
-          </Switch>
-        </Startup>
-      </RouterSelector>
-    </Provider>
+  return (  
+      <Provider store={store}>
+        <RouterSelector history={history} location={props.location} context={props.context}>
+          <Startup>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/:userName" component={Repos} />
+              <Route exact path="/:userName/:repositoryName" component={Readme} />
+              <PrivateRoute exact path="/hidden-route" component={HomePage} />
+              <OnlyAnonymousRoute exact path="/anonymous-route" component={HomePage} />
+              <Route component={NotFound} />
+            </Switch>
+          </Startup>
+        </RouterSelector>
+      </Provider> 
   )
 }
 
