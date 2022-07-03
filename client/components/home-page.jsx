@@ -1,26 +1,23 @@
 import React, { useState } from 'react'
 import Head from './head'
-import bg from '../assets/images/mainbg.jpg'
+
 import { history } from '../redux'
 
 const HomePage = () => {
- const [val, setVal] = useState('')
+  const [val, setVal] = useState('')
 
-const changeInput = (event) => {
-  setVal(event.target.value)
-}
+  const changeInput = (event) => {
+    setVal(event.target.value)
+  }
 
-const onClick = () => {
-  history.push(`/${val}`)
-}
+  const onClick = () => {
+    history.push(`/${val}`)
+  }
 
   return <>
     <Head title="Home" />
-    <div className="flex justify-center items-center w-full h-screen bg-no-repeat bg-cover"
-         style={{ backgroundImage: `url(${bg})`}}>
-
-      <div className="flex flex-col justify-center p-10 rounded-xl select-none bg-gradient-to-r from-teal-400 to-stone-900">
-        <h1 className="font-mono text-center text-white text-xl mb-2.5">Enter username</h1>
+      <div className="flex flex-col justify-center p-20 rounded-xl select-none bg-gradient-to-r from-[#00BFFF]/30 to-[#000000]/60">
+        <h1 className="text-center text-2xl font-bold text-[#00BFFF] mb-3">Enter username</h1>
         
         <input id='input-field'
                type='text' 
@@ -31,11 +28,10 @@ const onClick = () => {
         <button type='button'
                 id='search-button'
                 onClick={onClick}
-                className='bg-cyan-800  border-b-4 border-cyan-900'>
+                className='bg-[#00BFFF]  border-b-4  rounded border-[#1E90FF]'>
                   Search
         </button>
       </div>
-    </div>
   </>
 }
 
