@@ -9,7 +9,7 @@ import Header from './header'
 const UserReposList = (props) => {
 
   const list = props.reposList.map((repo) => {
-    return <li key={repo.id} className="text-[#00BFFF] font-normal hover:font-bold no-underline hover:underline">
+    return <li key={repo.id} className="text-[#00BFFF] no-underline hover:underline">
         <Link to={`/${props.userName}/${repo.name}`}>{repo.name}</Link>
       </li>
   })
@@ -30,7 +30,7 @@ const Repos = () => {
     <>
       <Head title='Repositories'/>
       <Header userName={userName}/>
-      <div className="p-10  rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
+      <div className="p-10 rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
         <UserReposList reposList={reposList} userName={userName}/>
       </div>
     </>

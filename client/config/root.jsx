@@ -47,7 +47,7 @@ const RouterSelector = (props) =>
 
 const RootComponent = (props) => {
   return (  
-    <div className="flex flex-col justify-center items-center w-full h-screen bg-no-repeat bg-cover bg-scroll"
+    <div className="flex flex-col justify-center items-center w-full  min-h-screen p-10 bg-fixed bg-no-repeat bg-cover"
          style={{ backgroundImage: `url(${bg})`}}>
       <Provider store={store}>
         <RouterSelector history={history} location={props.location} context={props.context}>
