@@ -20,8 +20,8 @@ const Readme = () => {
   return <>
           <Head title='ReadMe'/>
           <Header userName={userName} repositoryName={repositoryName}/>
-          <div id='description' className=" text-[#00BFFF] p-10  rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
-            <ReactMarkdown>{readmeFile}</ReactMarkdown>
+          <div id='description' className="text-white w-full p-10  border-2 border-[#00BFFF] rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
+            <ReactMarkdown className="overflow-scroll">{readmeFile}</ReactMarkdown>
           </div>
         </>
 }
