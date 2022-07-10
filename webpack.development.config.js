@@ -99,7 +99,12 @@ const config = {
             }
           },
 
-          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'css-loader', 
+            options: { 
+              sourceMap: true,
+              url: false
+            } 
+          },
           {
             loader: 'postcss-loader'
           },
@@ -114,10 +119,6 @@ const config = {
         use: [
           {
             loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: './client/assets/images/'
-            }
           }
         ]
       },

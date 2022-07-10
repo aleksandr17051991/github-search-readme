@@ -12,7 +12,7 @@ import NotFound from '../components/404'
 
 import Startup from './startup'
 
-import bg from '../assets/images/mainbg.jpg'
+// import bg from '../assets/images/mainbg.jpg'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
   const user = useSelector((state) => state.auth.user)
@@ -47,8 +47,7 @@ const RouterSelector = (props) =>
 
 const RootComponent = (props) => {
   return (  
-    <div className="flex flex-col justify-center items-center w-full  min-h-screen p-10 bg-fixed bg-no-repeat bg-cover"
-         style={{ backgroundImage: `url(${bg})`}}>
+    <div className="flex flex-col justify-center items-center w-full  min-h-screen p-10 bg-[url(../images/mainbg.jpg)] bg-fixed bg-no-repeat bg-cover">
       <Provider store={store}>
         <RouterSelector history={history} location={props.location} context={props.context}>
           <Startup>
