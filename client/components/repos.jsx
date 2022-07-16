@@ -20,19 +20,28 @@ const UserReposList = (props) => {
 const Repos = () => {
   const { userName } = useParams()
   const [reposList, setReposList] = useState([])
+  const [load, setLoad] = useState(false)
   
   useEffect(() => {
     axios(`https://api.github.com/users/${userName}/repos`)
-      .then((list) => setReposList(list.data))
+      .then((list) => {
+        setReposList(list.data)
+        setLoad(true)
+      })
   },[])
 
   return (
     <>
       <Head title='Repositories'/>
-      <Header userName={userName}/>
-      <div className="p-10 rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
-        <UserReposList reposList={reposList} userName={userName}/>
-      </div>
+      { load ?
+      <>
+        <Header userName={userName}/>
+        <div className="p-10 rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
+          <UserReposList reposList={reposList} userName={userName}/>
+        </div>
+      </> : 
+      <div className="text-[#00BFFF]">Loading...</div>
+      }
     </>
   )
 }
