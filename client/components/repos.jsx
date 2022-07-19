@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import Head from './head'
 import Header from './header'
+import Loader from './loader'
 
 
 const UserReposList = (props) => {
@@ -40,7 +41,7 @@ const Repos = () => {
           <UserReposList reposList={reposList} userName={userName}/>
         </div>
       </> : 
-      <div className="text-[#00BFFF]">Loading...</div>
+      <Loader />
       }
     </>
   )

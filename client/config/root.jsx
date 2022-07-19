@@ -12,7 +12,6 @@ import NotFound from '../components/404'
 
 import Startup from './startup'
 
-// import bg from '../assets/images/mainbg.jpg'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
   const user = useSelector((state) => state.auth.user)
