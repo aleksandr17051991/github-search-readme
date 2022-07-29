@@ -7,7 +7,7 @@ const Header = (props) => {
             {props.userName}
           </div>
           { (typeof props.repositoryName === 'undefined') ?
-            <Link to='/' id='go-back' className="text-[#ea580c] font-normal hover:font-bold no-underline hover:underline mb-2">
+            <Link to='/' id='go-back' className="text-[#ea580c] font-normal no-underline mb-2 hover:font-bold hover:underline">
               Go back
             </Link> :
             <Link to={`/${props.userName}`} id='go-repository-list' className="text-[#ea580c] font-normal hover:font-bold no-underline hover:underline mb-2">

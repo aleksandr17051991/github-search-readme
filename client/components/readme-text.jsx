@@ -27,7 +27,7 @@ const Readme = () => {
           { load ?
           <>
             <Header userName={userName} repositoryName={repositoryName}/>
-            <div id='description' className="text-white p-10  max-w-full overflow-scroll border-2 border-[#00BFFF] rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
+            <div id='description' className="text-white p-10  max-w-full overflow-x-auto border-2 border-[#00BFFF] rounded-xl  bg-gradient-to-r from-[#000000]/80 via-[#00BFFF]/10 to-[#000000]/80">
               <ReactMarkdown>{readmeFile}</ReactMarkdown>
             </div>
           </> : 
