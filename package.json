@@ -22,8 +22,8 @@
         "watch:server": "nodemon --legacy-watch start.js --watch server --watch client --exec \"npm run lint:server  --scripts-prepend-node-path && node\"",
         "build:prod": "cross-env NODE_ENV=production webpack --config webpack.production.config.js --progress --profile --color",
         "build:ssr": "cross-env NODE_ENV=production webpack --config webpack.ssr.config.js --progress --profile --color",
-        "build": "yarn run build:prod && yarn run build:ssr",
-        "heroku-postbuild": "yarn run build:prod && yarn run build:ssr",
+        "build": "yarn run build:prod",
+        "heroku-postbuild": "yarn run build:prod",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "prepare": "husky install"
